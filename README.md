@@ -1,6 +1,18 @@
-# Zeppelin Web Application
+# Kids First Zeppelin Web Application
 
-This is Zeppelin's frontend project.
+This application contains code for zeppelin frontend customization. Here the list of files we modified :
+```
+ src/app/home/home.css
+ src/app/home/home.html
+ src/app/jobmanager/jobmanager.css
+ src/app/notebook/notebook.css
+ src/assets/images/zeppelin-kf
+ src/assets/images/zeppelin_svg_logo.svg
+ src/components/navbar/navbar.css
+ src/components/navbar/navbar.html
+```
+
+This application is built on top of Apache Zeppelin 0.9, tag v0.9-docker
 
 ## Development Guide 
 
@@ -10,13 +22,14 @@ It is recommended to install node 6.0.0+ since Zeppelin uses 6.9.1+ (see [creati
 
 All build commands are described in [package.json](./package.json)
 
+Before running this application, download and start zeppelin locally like describe [in official documentation](https://zeppelin.apache.org/docs/latest/quickstart/install.html)
+
 ```sh
+# init submodules (only once)
+$ git submodule update --init
 # install required depepdencies and bower packages (only once)
 $ npm install -g yarn
 $ yarn install
-
-# build zeppelin-web for production
-$ yarn run build
 
 # run frontend application only in dev mode (localhost:9000) 
 # you need to run zeppelin backend instance also
@@ -57,37 +70,3 @@ This will download all the dependencies including node (the binaries in the fold
 $ mvn package 
 ```
 
-## Troubleshooting
-
-#### Git error
-
-In case of the error `ECMDERR Failed to execute "git ls-remote --tags --heads git://xxxxx", exit code of #128`
-
-change your git config with `git config --global url."https://".insteadOf git://`
-
-#### Proxy issues
-
-Try to add to the `.bowerrc` file the following content:
-```
-  "proxy" : "http://<host>:<port>",
-  "https-proxy" : "http://<host>:<port>"
-```
-
-also try to add proxy info to yarn install command:
-```xml
-<execution>
-	<id>yarn install</id>
-	<goals>
-    	<goal>yarn</goal>
-    </goals>
-    <configuration>
-    	<arguments>--proxy=http://<host>:<port> --https-proxy=http://<host>:<port></arguments>
-    </configuration>
-</execution>
-```
-
-and retry to build again.
-
-## Contribute on Zeppelin Web
-
-If you wish to help us and contribute to Zeppelin WebApplication, please look at the overall project [contribution guidelines](https://zeppelin.apache.org/contribution/contributions.html) and the more focused [Zeppelin WebApplication's documentation](https://zeppelin.apache.org/contribution/webapplication.html).
