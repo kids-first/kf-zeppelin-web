@@ -1,0 +1,230 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* ------------------------------------------- */
+/* Vars
+/* ------------------------------------------- */
+:root {
+  --color-text: #515885;
+  --color-text-secondary: #7d84a6;
+  --color-text-disabled: #a9adc0;
+  --color-text-title: #2B388F;
+  --color-link: #A6278F;
+  --color-link-hover: #B5469E;
+  --color-layout-body-background:#f4f5f8;
+  --color-item-disabled: var(--color-text-disabled);
+  --color-border-base: #D7D8DB;
+  --color-border-split:#EAEAEC;
+  --color-primary: #009BBA;
+  --color-primary-hover: #20B1C7;
+}
+
+
+ /* ------------------------------------------- */
+/* Navbar
+/* ------------------------------------------- */
+
+.navbar-kf {
+  background: #fff;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0 3px 6px -4px rgba(81, 88, 133, 0.3),
+    0 6px 16px 0 rgba(81, 88, 133, 0.16);
+}
+
+.gradientAccent {
+  background-image: linear-gradient(90deg, #90278e, #c39 35%, #be1e2d 66%, #f6921e);
+  width: 100%;
+  height: 5px;
+}
+
+.navbar-title > span {
+  font-family: 'Patua One', cursive;
+  font-size: 24px;
+  margin-right: 24px;
+}
+
+.navbar-menu {
+  font-size: 16px;
+}
+
+.navbar-kf .navbar-nav > li > a.navbar-menu-notebook:focus {
+  background-color: transparent;
+}
+
+.navbar-kf .navbar-nav > li > a.navbar-menu-notebook:hover{
+  background-color: var(--color-layout-body-background);
+}
+
+.navbar-kf .navbar-nav > li > a {
+  padding-top: 16px;
+}
+
+a.navbar-brand:hover,
+a.navbar-brand:active,
+a.navbar-brand:focus {
+  color: var(--color-link-hover);
+}
+
+.navbar-logo {
+  padding: 5px 16px 5px 16px;
+  height: 50px;
+  line-height: inherit;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-search {
+  font-size: 14px;
+  font-family: 'FontAwesome', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#navbar-search {
+  min-width: 170px;
+}
+
+@media (min-width: 795px) and (max-width: 830px) {
+  #navbar-search {
+    width: 150px;
+    min-width: 150px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 794px) {
+  #navbar-search {
+    width: 130px;
+    min-width: 130px;
+  }
+}
+
+/** required to pin, unpin `navbar-fixed-top` */
+.navbar-fixed-top.headroom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all .2s ease-in-out;
+}
+.navbar-fixed-top.headroom--unpinned { top: -100px; }
+.navbar-fixed-top.headroom--pinned { top: 0; /** `navbar` top */ }
+
+.navbar-toggle {
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+.navbar-toggle .icon-bar {
+  background: white;
+  width: 18px;
+}
+
+@media (max-width: 767px) {
+
+  .navbar-nav .open .dropdown-menu > .scrollbar-container > li > a,
+  #notebook-list li a {
+    padding: 5px 15px 5px 25px;
+    line-height: 20px;
+  }
+
+  .navbar-kf .navbar-nav .open .dropdown-menu > .scrollbar-container > li > a {
+    color: #D3D3D3;
+  }
+
+  .navbar-kf .navbar-nav .open .dropdown-menu > .scrollbar-container > li > a:hover,
+  .navbar-kf .navbar-nav .open .dropdown-menu > .scrollbar-container > li > a:focus,
+  #notebook-list li a:hover {
+    color: var(--color-link);
+    background: transparent;
+  }
+
+  .navbar-kf .navbar-nav .open .dropdown-menu > .scrollbar-container > .active > a,
+  .navbar-kf .navbar-nav .open .dropdown-menu > .scrollbar-container > .active > a:hover,
+  .navbar-kf .navbar-nav .open .dropdown-menu > .scrollbar-container > .active > a:focus {
+    color: #fff;
+    background: #080808;
+  }
+
+  .navbar-kf .navbar-nav .open .dropdown-menu .divider {
+    background: var(--color-border-base);
+  }
+
+  .navbar-kf .navbar-collapse, .navbar-kf .navbar-form {
+    border-color: var(--color-border-split);
+  }
+
+  .navbar-kf .navbar-form {
+    display: block !important;
+    border: none;
+  }
+}
+
+.username {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* About Dialog */
+
+.modal-header-about {
+  background-color: #3071a9;
+  border: 2px solid #3071a9;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.modal-header-about > .close {
+  color: #cfcfcf;
+  opacity: 1;
+}
+
+.modal-header-about > .modal-title {
+  font-weight: 300;
+  font-size: 20px;
+  color: #e8e8e8;
+}
+
+.modal-body-about-version {
+  font-weight: 500;
+}
+
+.modal-body-about {
+  height: 250px;
+  padding: 50px;
+}
+
+.modal-body-about .logo {
+  padding-top: 30px;
+}
+
+.modal-body-about .logo img {
+  width: 95%;
+}
+
+.modal-body-about .content {
+  text-align: center;
+}
+
+.modal-body-about .content h3 {
+  font-family: 'Patua One';
+  color: #3071A9;
+  font-size: 30px;
+  margin: 0 auto;
+}
