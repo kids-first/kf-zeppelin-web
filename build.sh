@@ -1,5 +1,5 @@
 #!/bin/bash
-set +e
+set -e
 git submodule update --init
 
 docker run -it --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.8.1-jdk-11 mvn package

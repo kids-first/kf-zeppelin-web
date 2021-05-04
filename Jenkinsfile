@@ -26,7 +26,7 @@ pipeline {
       steps{
         pending("${env.JOB_NAME}","prd")
         sh '''
-           sudo -u ubuntu ./build.sh
+           ./build.sh
           '''
         success("${env.JOB_NAME}","prd")
       }
