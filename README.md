@@ -12,7 +12,7 @@ This application contains code for zeppelin frontend customization. Here the lis
  src/components/navbar/navbar.html
 ```
 
-This application is built on top of Apache Zeppelin 0.9, tag v0.9-docker
+This application is built on top of Apache Zeppelin 0.10, tag v0.10.0
 
 ## Development Guide 
 
