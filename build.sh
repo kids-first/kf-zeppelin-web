@@ -9,7 +9,13 @@ docker run --rm --name kf-zeppelin-web-build \
  -v "$(pwd)":/usr/src/app \
  -w /usr/src/app \
  node:14 \
- yarn install && npm run build:dist
+ yarn install
+
+docker run --rm --name kf-zeppelin-web-build \
+ --user $(id -u):$(id -g) \
+ -v "$(pwd)":/usr/src/app \
+ -w /usr/src/app \
+ node:14 npm run build:dist
 
 docker run --rm --name kf-zeppelin-web-build \
  --user $(id -u):$(id -g) \

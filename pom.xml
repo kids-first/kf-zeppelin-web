@@ -30,7 +30,7 @@
   <groupId>org.apache.zeppelin</groupId>
   <artifactId>zeppelin-web</artifactId>
   <packaging>war</packaging>
-  <version>0.9.1-SNAPSHOT</version>
+  <version>0.10.1-SNAPSHOT</version>
   <name>Zeppelin: web Application</name>
 
   <properties>
